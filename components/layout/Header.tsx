@@ -8,7 +8,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const navigation = [
   { name: "Philosophy", href: "/philosophy" },
-  { name: "Work", href: "/work" },
+  { name: "Works", href: "/work" },
   { name: "Leadership", href: "/leadership" },
   { name: "About", href: "/about" },
   { name: "Contact", href: "/contact" },
@@ -22,47 +22,45 @@ export function Header() {
       initial={{ opacity: 0, y: -10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-      className="fixed top-0 left-0 right-0 z-50 no-print"
+      className="fixed top-0 left-0 right-0 z-50 no-print bg-surface/80 backdrop-blur-md border-b border-border"
     >
-      <div className="mx-auto max-w-5xl px-6 md:px-12">
-        <nav className="flex items-center justify-between py-6 border-b border-border bg-surface/80 backdrop-blur-md">
-          <Link
-            href="/"
-            className="text-foreground font-medium text-sm tracking-wide hover:text-accent transition-colors duration-150"
-          >
-            Mithun M.
-          </Link>
+      <nav className="mx-auto max-w-5xl px-6 md:px-12 flex items-center justify-between py-5">
+        <Link
+          href="/"
+          className="text-foreground font-medium text-sm tracking-wide hover:text-accent transition-colors duration-150"
+        >
+          Mithun M.
+        </Link>
 
-          <div className="flex items-center gap-8">
-            <ul className="hidden md:flex items-center gap-6">
-              {navigation.map((item) => {
-                const isActive = pathname === item.href;
-                return (
-                  <li key={item.name}>
-                    <Link
-                      href={item.href}
-                      className={`relative text-sm font-medium transition-colors duration-150 group ${
-                        isActive ? "text-accent" : "text-foreground-muted hover:text-foreground"
+        <div className="flex items-center gap-8">
+          <ul className="hidden md:flex items-center gap-6">
+            {navigation.map((item) => {
+              const isActive = pathname === item.href;
+              return (
+                <li key={item.name}>
+                  <Link
+                    href={item.href}
+                    className={`relative text-sm font-medium transition-colors duration-150 group ${
+                      isActive ? "text-accent" : "text-foreground-muted hover:text-foreground"
+                    }`}
+                  >
+                    {item.name}
+                    <span
+                      className={`absolute -bottom-1 left-0 h-px bg-accent transition-transform duration-300 ${
+                        isActive ? "w-full scale-x-100" : "w-full scale-x-0 group-hover:scale-x-100"
                       }`}
-                    >
-                      {item.name}
-                      <span
-                        className={`absolute -bottom-1 left-0 h-px bg-accent transition-transform duration-300 ${
-                          isActive ? "w-full scale-x-100" : "w-full scale-x-0 group-hover:scale-x-100"
-                        }`}
-                        style={{ transformOrigin: isActive ? "left" : "left" }}
-                      />
-                    </Link>
-                  </li>
-                );
-              })}
-            </ul>
+                      style={{ transformOrigin: "left" }}
+                    />
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
 
-            <ThemeToggle />
-            <MobileMenu pathname={pathname} />
-          </div>
-        </nav>
-      </div>
+          <ThemeToggle />
+          <MobileMenu pathname={pathname} />
+        </div>
+      </nav>
     </motion.header>
   );
 }
@@ -99,9 +97,9 @@ function MobileMenu({ pathname }: { pathname: string }) {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className="absolute top-full left-0 right-0 bg-surface border-b border-border py-4"
+            className="absolute top-full left-0 right-0 bg-surface/95 backdrop-blur-md border-b border-border py-4"
           >
-            <ul className="flex flex-col px-6">
+            <ul className="flex flex-col max-w-5xl mx-auto px-6 md:px-12">
               {navigation.map((item) => {
                 const isActive = pathname === item.href;
                 return (

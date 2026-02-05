@@ -11,10 +11,10 @@ export default function ResumePage() {
   };
 
   return (
-    <div className="pt-32 pb-24">
+    <div className="pt-24 pb-24">
       <div className="mx-auto max-w-3xl px-6 md:px-12">
         {/* Header with Print Button */}
-        <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-6 mb-8">
+        <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-6">
           <PageTitle>Resume</PageTitle>
           <motion.button
             whileHover={{ y: -2 }}
@@ -36,10 +36,10 @@ export default function ResumePage() {
           </motion.button>
         </div>
 
-        <BorderDraw className="mb-12" delay={0.3} />
+        <BorderDraw className="mb-10" delay={0.3} />
 
         {/* Resume Content */}
-        <div className="space-y-12">
+        <div className="space-y-10">
           {/* Title & Contact */}
           <RevealOnScroll delay={0.1}>
             <header className="space-y-2">
@@ -50,7 +50,7 @@ export default function ResumePage() {
                 Senior Software Engineer · Privacy & Platform Engineering
               </p>
               <p className="text-sm text-foreground-subtle">
-                Chennai, Tamil Nadu, India · mithunmuralee94@gmail.com
+                Chennai, India · mithunmuralee94@gmail.com · linkedin.com/in/mithunmuraleedharan
               </p>
             </header>
           </RevealOnScroll>
@@ -58,15 +58,15 @@ export default function ResumePage() {
           {/* Summary */}
           <RevealOnScroll delay={0.15}>
             <section>
-              <h3 className="text-sm font-semibold text-foreground-subtle uppercase tracking-wider mb-4">
+              <h3 className="text-sm font-semibold text-foreground-subtle uppercase tracking-wider mb-3">
                 Summary
               </h3>
               <p className="text-base text-foreground-muted leading-relaxed">
-                Senior Software Engineer with 7+ years of experience building privacy
-                and compliance platforms at scale. Specialized in microfrontend
-                architecture, React ecosystem, and scalable web applications.
-                Track record of leading teams, introducing architectural improvements,
-                and delivering complex systems serving hundreds of stakeholders.
+                Architect of PayPal&apos;s unified privacy platform serving 300+ stakeholders.
+                Pioneered microfrontend adoption using Webpack Module Federation, unifying 16
+                applications with 6 teams deploying independently. 7+ years building
+                privacy-critical systems, from fraud detection at BNY Mellon to data governance
+                platforms at PayPal.
               </p>
             </section>
           </RevealOnScroll>
@@ -74,63 +74,66 @@ export default function ResumePage() {
           {/* Experience */}
           <RevealOnScroll delay={0.2}>
             <section>
-              <h3 className="text-sm font-semibold text-foreground-subtle uppercase tracking-wider mb-6">
+              <h3 className="text-sm font-semibold text-foreground-subtle uppercase tracking-wider mb-5">
                 Experience
               </h3>
 
-              <div className="space-y-10">
+              <div className="space-y-8">
                 <ExperienceBlock
                   company="PayPal"
-                  duration="7 years 2 months"
+                  duration="7+ years"
                   roles={[
                     {
                       title: "Senior Software Engineer",
                       period: "February 2025 - Present",
-                      points: [],
+                      points: [
+                        "Leading development of Data Erasure & Retention platform to ensure regulatory compliance and eliminate residual data risks across PayPal systems",
+                        "Owning end-to-end delivery from Java API development to UI design and implementation",
+                      ],
                     },
                     {
                       title: "Software Engineer 3",
-                      period: "March 2024 - June 2025",
+                      period: "March 2024 - February 2025",
                       points: [
-                        "Led micro-frontend unification using Webpack Module Federation, enabling independent team deployments while maintaining unified UX for 300+ stakeholders",
-                        "Implemented OpenTelemetry tracing and Datadog RUM for end-to-end observability",
-                        "Reduced bundle size by 70% and page load time by 20 seconds through code splitting and Webpack compression strategies",
+                        "Unified 16 separate applications into Privacy Pro platform using Webpack Module Federation, enabling 6 teams to deploy independently with zero cross-team friction",
+                        "Reduced bundle size from 11MB to 3.3MB (70%) and page load time from 25s to 5s through code splitting, lazy loading, and compression strategies",
+                        "Delivered internal tech talk on Module Federation architecture to 500+ engineers",
+                        "Integrated OpenTelemetry tracing and Datadog RUM for end-to-end observability across federated modules",
                       ],
                     },
                     {
                       title: "Software Engineer 2",
                       period: "January 2022 - March 2024",
                       points: [
-                        "Introduced Microfrontend approach to modularize UI components from different tracks into a single stop application with common authentication",
-                        "Prepared detailed engineering plans and formulated engineering pathways for complex requirements",
-                        "Designed and developed cost-effective, effort-reducing solutions for the privacy platform",
+                        "Pioneered microfrontend architecture at PayPal Privacy org—first implementation of Module Federation enabling unified authentication across independently deployed modules",
+                        "Designed dynamic role-based access management system serving 300+ stakeholders including Privacy Officers, Regulators, and Audit teams",
+                        "Authored technical blog post on Module Federation implementation patterns",
                       ],
                     },
                     {
                       title: "Software Engineer 1",
                       period: "January 2019 - December 2021",
                       points: [
-                        "Implemented ticketing system to consolidate Privacy Requests, DSR, and DAR requests from single point",
-                        "Groomed a Data Engineering team to adapt React and develop applications end to end",
-                        "Developed numerous self-intuitive dashboards and charts for Privacy anomaly discovery",
-                        "Led team of 5 to develop application handling PayPal data discovery and scan management",
+                        "Led team of 5 engineers to deliver Data Lifecycle Platform in 3 months—5 core modules now used by 20+ privacy operations staff daily",
+                        "Built 5+ self-service dashboards for anomaly detection, actively used by 20 privacy analysts to discover and track compliance issues",
+                        "Mentored 4 Data Engineers in React development, enabling them to independently deliver 2 production applications",
+                        "Developed interactive organizational hierarchy visualization using D3.js for clear data ownership mapping across business units",
                       ],
                     },
                   ]}
                 />
 
                 <ExperienceBlock
-                  company="BNY Mellon Wealth Management"
+                  company="BNY Mellon"
                   duration="1 year 8 months"
                   roles={[
                     {
                       title: "Application Developer",
                       period: "June 2017 - January 2019",
                       points: [
-                        "Designed User Experience with prototyping tools and secured business approval",
-                        "Worked as UI/API developer on Escrow agreements management project",
-                        "Served as UI Lead for Authentify—fraud detection system based on user transactions",
-                        "Dockerized independent workflow engine to BNY Mellon's Extreme Cloud platform",
+                        "Served as UI Lead for Authentify—fraud detection system identifying suspicious business transactions based on user behavior patterns",
+                        "Designed UX prototypes and secured business stakeholder approval before implementation, establishing prototype-first development process",
+                        "Dockerized workflow engine and deployed to BNY Mellon's Extreme Cloud platform for scalable fraud analysis",
                       ],
                     },
                   ]}
@@ -139,24 +142,48 @@ export default function ResumePage() {
             </section>
           </RevealOnScroll>
 
-          {/* Technical Context */}
+          {/* Recognition */}
+          <RevealOnScroll delay={0.22}>
+            <section>
+              <h3 className="text-sm font-semibold text-foreground-subtle uppercase tracking-wider mb-3">
+                Recognition
+              </h3>
+              <ul className="space-y-2 text-sm text-foreground-muted">
+                <li className="flex items-start gap-2">
+                  <span className="text-accent mt-1">•</span>
+                  <span><strong className="text-foreground">Spot Award</strong> — Recognized for exceptional delivery on Compleye platform</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-accent mt-1">•</span>
+                  <span><strong className="text-foreground">Community Champion</strong> — Led Tech for Good initiative at PayPal</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-accent mt-1">•</span>
+                  <span><strong className="text-foreground">Tech Talk Speaker</strong> — Module Federation architecture, 500+ attendees</span>
+                </li>
+              </ul>
+            </section>
+          </RevealOnScroll>
+
+          {/* Technical Skills */}
           <RevealOnScroll delay={0.25}>
             <section>
-              <h3 className="text-sm font-semibold text-foreground-subtle uppercase tracking-wider mb-4">
+              <h3 className="text-sm font-semibold text-foreground-subtle uppercase tracking-wider mb-3">
                 Technical Skills
               </h3>
-              <p className="text-base text-foreground-muted font-mono">
-                React.js · Node.js · TypeScript · Microfrontends · Webpack Module
-                Federation · D3.js · OpenTelemetry · Datadog RUM · Framer Motion ·
-                Docker · AngularJS · Spring
-              </p>
+              <div className="space-y-2 text-sm text-foreground-muted">
+                <p><span className="text-foreground font-medium">Frontend:</span> React, TypeScript, Webpack Module Federation, D3.js, Framer Motion</p>
+                <p><span className="text-foreground font-medium">Backend:</span> Node.js, Java, Spring</p>
+                <p><span className="text-foreground font-medium">Observability:</span> OpenTelemetry, Datadog RUM</p>
+                <p><span className="text-foreground font-medium">Infrastructure:</span> Docker, Microfrontend Architecture</p>
+              </div>
             </section>
           </RevealOnScroll>
 
           {/* Education */}
           <RevealOnScroll delay={0.28}>
             <section>
-              <h3 className="text-sm font-semibold text-foreground-subtle uppercase tracking-wider mb-4">
+              <h3 className="text-sm font-semibold text-foreground-subtle uppercase tracking-wider mb-3">
                 Education
               </h3>
               <div>
@@ -167,21 +194,6 @@ export default function ResumePage() {
                   Bachelor&apos;s degree, Computer Science · 2013 - 2017
                 </p>
               </div>
-            </section>
-          </RevealOnScroll>
-
-          {/* Certifications */}
-          <RevealOnScroll delay={0.3}>
-            <section>
-              <h3 className="text-sm font-semibold text-foreground-subtle uppercase tracking-wider mb-4">
-                Certifications
-              </h3>
-              <ul className="space-y-1 text-sm text-foreground-muted">
-                <li>Microfrontends with ReactJS</li>
-                <li>Node.js (Basic) Certificate</li>
-                <li>C/C++ Intermediate Certificate</li>
-                <li>AMCAT Certified Software Development Trainee</li>
-              </ul>
             </section>
           </RevealOnScroll>
         </div>
@@ -211,7 +223,7 @@ function ExperienceBlock({
         <h4 className="text-lg font-semibold text-foreground">{company}</h4>
         <p className="text-sm text-foreground-subtle">{duration}</p>
       </div>
-      <div className="space-y-6">
+      <div className="space-y-5">
         {roles.map((role, index) => (
           <div key={index}>
             <div className="mb-2">
@@ -225,7 +237,7 @@ function ExperienceBlock({
                 {role.points.map((point, i) => (
                   <li
                     key={i}
-                    className="text-sm text-foreground-muted leading-relaxed pl-4 border-l border-border"
+                    className="text-sm text-foreground-muted leading-relaxed pl-4 border-l-2 border-accent/30"
                   >
                     {point}
                   </li>

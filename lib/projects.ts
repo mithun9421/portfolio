@@ -2,6 +2,8 @@ export interface Project {
   slug: string;
   title: string;
   shortDescription: string;
+  icon: string;
+  tech: string[];
   context: string;
   constraints: string[];
   decisions: string[];
@@ -15,6 +17,8 @@ export const projects: Project[] = [
     title: "Privacy Pro Platform",
     shortDescription:
       "Micro-frontend architecture serving 300+ stakeholders across privacy operations",
+    icon: "shield",
+    tech: ["React", "Module Federation", "TypeScript", "Datadog"],
     context: `Privacy operations in a global fintech organization involves multiple specialized applications: data scanning, cookie management, consent workflows, regulatory reporting. Each had evolved independently, creating fragmented experiences for the 300+ stakeholders who needed to work across them.`,
     constraints: [
       "Scale: Multiple applications, independent teams, existing user bases that couldn't tolerate disruption",
@@ -40,6 +44,8 @@ export const projects: Project[] = [
     title: "Data Lifecycle Platform",
     shortDescription:
       "Governance dashboards for cross-system data mapping and compliance visibility",
+    icon: "database",
+    tech: ["React", "TypeScript", "Webpack", "Jest"],
     context: `Understanding where personal data lives across multiple systems is a foundational requirement for privacy compliance. Without clear visibility, governance becomes guesswork and audit preparation becomes fire drills.`,
     constraints: [
       "Timeline: Aggressive delivery schedule spanning multiple dependent systems",
@@ -62,6 +68,8 @@ export const projects: Project[] = [
     title: "Privacy Analytics Dashboards",
     shortDescription:
       "Self-intuitive dashboards for privacy anomaly discovery and tracking",
+    icon: "chart",
+    tech: ["React", "D3.js", "CSS", "REST APIs"],
     context: `Privacy teams needed clear visibility into anomalies, request patterns, and compliance status. Existing tools required technical expertise to interpret, creating bottlenecks.`,
     constraints: [
       "Users: Non-technical privacy officers needed to self-serve insights",
@@ -84,6 +92,8 @@ export const projects: Project[] = [
     title: "Organizational Visualization",
     shortDescription:
       "Interactive hierarchy visualization using D3.js for ownership clarity",
+    icon: "hierarchy",
+    tech: ["D3.js", "React", "SVG", "JavaScript"],
     context: `Large organizations struggle with clarity around data ownership. Who owns which system? Which business unit is responsible for which data? Without visualization, these questions require institutional knowledge that doesn't scale.`,
     constraints: [
       "Complexity: Organizational hierarchies are deeply nested and constantly changing",
@@ -105,6 +115,8 @@ export const projects: Project[] = [
     title: "Consumer Privacy Center",
     shortDescription:
       "Feedback integration reaching 100K+ global users",
+    icon: "globe",
+    tech: ["React", "Sprig SDK", "Analytics", "A/B Testing"],
     context: `Consumer-facing privacy settings need continuous improvement based on real user feedback. Without systematic feedback collection, product decisions rely on assumptions.`,
     constraints: [
       "Scale: 100K+ global user interactions",
@@ -125,6 +137,8 @@ export const projects: Project[] = [
     title: "Authentify Fraud Detection",
     shortDescription:
       "UI lead for fraud detection system at BNY Mellon",
+    icon: "fingerprint",
+    tech: ["AngularJS", "Docker", "Java", "Spring"],
     context: `Financial transactions require robust fraud detection. The challenge was building a system that could identify fraudulent business transactions based on user behavior patterns, while remaining usable for investigation teams.`,
     constraints: [
       "Accuracy: False positives create operational burden; false negatives create risk",

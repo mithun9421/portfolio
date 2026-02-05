@@ -2,7 +2,6 @@ import { Metadata } from "next";
 import { PageTitle } from "@/components/typography/PageTitle";
 import { LeadParagraph } from "@/components/typography/LeadParagraph";
 import { PhilosophyBlock } from "@/components/content/PhilosophyBlock";
-import { BorderDraw } from "@/components/animated/BorderDraw";
 import { RevealOnScroll } from "@/components/animated/RevealOnScroll";
 
 export const metadata: Metadata = {
@@ -13,21 +12,19 @@ export const metadata: Metadata = {
 
 export default function PhilosophyPage() {
   return (
-    <div className="pt-32 pb-24">
+    <div className="pt-24 pb-24">
       <div className="mx-auto max-w-2xl px-6 md:px-12">
         <PageTitle>Engineering Philosophy</PageTitle>
 
-        <RevealOnScroll delay={0.3}>
-          <LeadParagraph className="mt-8 max-w-lg">
+        <RevealOnScroll delay={0.2}>
+          <LeadParagraph className="mt-4 max-w-lg">
             These principles have emerged from 7+ years of building frontend
             systems—from fraud detection at BNY Mellon to privacy platforms
             at PayPal.
           </LeadParagraph>
         </RevealOnScroll>
 
-        <BorderDraw className="my-16" delay={0.5} />
-
-        <div className="space-y-4">
+        <div className="mt-10 space-y-4">
           <PhilosophyBlock title="Modular by Design" index={0}>
             <p>
               Microfrontends aren&apos;t just an architecture pattern—they&apos;re

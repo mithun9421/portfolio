@@ -3,7 +3,6 @@ import Link from "next/link";
 import { PageTitle } from "@/components/typography/PageTitle";
 import { LeadParagraph } from "@/components/typography/LeadParagraph";
 import { BodyText } from "@/components/typography/BodyText";
-import { BorderDraw } from "@/components/animated/BorderDraw";
 import { RevealOnScroll } from "@/components/animated/RevealOnScroll";
 
 export const metadata: Metadata = {
@@ -14,20 +13,18 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="pt-32 pb-24">
+    <div className="pt-24 pb-24">
       <div className="mx-auto max-w-2xl px-6 md:px-12">
         <PageTitle>About</PageTitle>
 
-        <RevealOnScroll delay={0.3}>
-          <LeadParagraph className="mt-8 max-w-lg">
-            A passionate frontend developer with a love for creating seamless
-            and visually appealing digital experiences.
+        <RevealOnScroll delay={0.2}>
+          <LeadParagraph className="mt-4 max-w-lg">
+            Frontend architect specializing in microfrontends, privacy platforms,
+            and systems that make complex workflows feel simple.
           </LeadParagraph>
         </RevealOnScroll>
 
-        <BorderDraw className="my-16" delay={0.5} />
-
-        <div className="space-y-12">
+        <div className="mt-10 space-y-10">
           <RevealOnScroll delay={0.1}>
             <section>
               <BodyText className="text-foreground-muted">
@@ -42,7 +39,7 @@ export default function AboutPage() {
 
           <RevealOnScroll delay={0.2}>
             <section>
-              <h2 className="text-lg font-semibold text-foreground mb-4">
+              <h2 className="text-lg font-semibold text-foreground mb-3">
                 The Journey
               </h2>
               <BodyText className="text-foreground-muted">
@@ -58,7 +55,21 @@ export default function AboutPage() {
 
           <RevealOnScroll delay={0.3}>
             <section>
-              <h2 className="text-lg font-semibold text-foreground mb-4">
+              <h2 className="text-lg font-semibold text-foreground mb-3">
+                Current Focus
+              </h2>
+              <BodyText className="text-foreground-muted">
+                Exploring how LLM-powered tools can accelerate development workflows
+                without compromising code quality. The intersection of AI assistance
+                and software engineering is where I&apos;m investing my learning energy
+                right now.
+              </BodyText>
+            </section>
+          </RevealOnScroll>
+
+          <RevealOnScroll delay={0.4}>
+            <section>
+              <h2 className="text-lg font-semibold text-foreground mb-3">
                 Beyond Code
               </h2>
               <BodyText className="text-foreground-muted">
@@ -73,9 +84,9 @@ export default function AboutPage() {
             </section>
           </RevealOnScroll>
 
-          <RevealOnScroll delay={0.4}>
+          <RevealOnScroll delay={0.5}>
             <section>
-              <h2 className="text-lg font-semibold text-foreground mb-4">
+              <h2 className="text-lg font-semibold text-foreground mb-3">
                 This Site
               </h2>
               <BodyText className="text-foreground-muted">
@@ -86,8 +97,8 @@ export default function AboutPage() {
             </section>
           </RevealOnScroll>
 
-          <RevealOnScroll delay={0.5}>
-            <div className="pt-8">
+          <RevealOnScroll delay={0.6}>
+            <div className="pt-4">
               <Link
                 href="/resume"
                 className="inline-flex items-center gap-2 text-base text-accent hover:text-accent-hover transition-colors duration-150"

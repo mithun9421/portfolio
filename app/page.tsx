@@ -17,7 +17,7 @@ export default function Home() {
         >
           <h1 className="font-display text-4xl md:text-5xl leading-tight text-foreground">
             <TextReveal
-              text="Building privacy platforms and scalable frontend systems that serve millions."
+              text="Architecting privacy platforms that power enterprise compliance at scale."
               delay={0.4}
               staggerDelay={0.04}
             />
@@ -29,7 +29,7 @@ export default function Home() {
             transition={{ duration: 0.5, delay: 1.8, ease: [0.16, 1, 0.3, 1] }}
             className="text-lg text-foreground-muted max-w-md"
           >
-            Senior Software Engineer at PayPal. 7+ years crafting microfrontend architectures and compliance-critical systems.
+            Senior Software Engineer at PayPal. Pioneered microfrontend architecture unifying 16 applications for 300+ stakeholders.
           </motion.p>
         </motion.div>
 
