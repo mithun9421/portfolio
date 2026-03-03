@@ -1,62 +1,31 @@
-"use client";
-
-import { motion } from "framer-motion";
-
 export function GradientMesh() {
   return (
     <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
       {/* Base gradient */}
       <div className="absolute inset-0 bg-surface" />
 
-      {/* Gradient orbs */}
-      <motion.div
+      {/* Gradient orbs — static, no animation to avoid GPU blur cost on mobile */}
+      <div
         className="absolute -top-[40%] -left-[20%] w-[70%] h-[70%] rounded-full opacity-30 dark:opacity-20 blur-[120px]"
         style={{
           background:
             "radial-gradient(circle, var(--color-accent) 0%, transparent 70%)",
         }}
-        animate={{
-          x: [0, 50, 0],
-          y: [0, 30, 0],
-        }}
-        transition={{
-          duration: 20,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
       />
 
-      <motion.div
+      <div
         className="absolute -bottom-[30%] -right-[20%] w-[60%] h-[60%] rounded-full opacity-20 dark:opacity-15 blur-[100px]"
         style={{
           background:
             "radial-gradient(circle, var(--color-accent) 0%, transparent 70%)",
         }}
-        animate={{
-          x: [0, -40, 0],
-          y: [0, -50, 0],
-        }}
-        transition={{
-          duration: 25,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
       />
 
-      <motion.div
+      <div
         className="absolute top-[40%] left-[50%] w-[40%] h-[40%] rounded-full opacity-15 dark:opacity-10 blur-[80px]"
         style={{
           background:
             "radial-gradient(circle, var(--color-accent) 0%, transparent 70%)",
-        }}
-        animate={{
-          x: [0, -30, 30, 0],
-          y: [0, 40, -20, 0],
-        }}
-        transition={{
-          duration: 30,
-          repeat: Infinity,
-          ease: "easeInOut",
         }}
       />
 

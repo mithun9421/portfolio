@@ -23,26 +23,32 @@ export function TextReveal({
 
   if (mode === "word") {
     const words = text.split(" ");
+    // Batch words into groups of 3 to reduce concurrent animations
+    const BATCH = 3;
+    const batches: string[][] = [];
+    for (let i = 0; i < words.length; i += BATCH) {
+      batches.push(words.slice(i, i + BATCH));
+    }
 
     return (
       <span ref={ref} className={className}>
-        {words.map((word, index) => (
-          <span key={index} className="inline-block overflow-hidden">
+        {batches.map((group, batchIndex) => (
+          <span key={batchIndex} className="inline overflow-hidden">
             <motion.span
-              initial={{ y: "100%", opacity: 0 }}
+              initial={{ opacity: 0, y: "30%" }}
               animate={
-                isInView ? { y: "0%", opacity: 1 } : { y: "100%", opacity: 0 }
+                isInView ? { opacity: 1, y: "0%" } : { opacity: 0, y: "30%" }
               }
               transition={{
-                duration: 0.5,
-                delay: delay + index * staggerDelay,
+                duration: 0.45,
+                delay: delay + batchIndex * staggerDelay * BATCH,
                 ease: [0.16, 1, 0.3, 1],
               }}
               className="inline-block"
             >
-              {word}
+              {group.join(" ")}
             </motion.span>
-            {index < words.length - 1 && <span>&nbsp;</span>}
+            {batchIndex < batches.length - 1 && <span>&nbsp;</span>}
           </span>
         ))}
       </span>
@@ -56,12 +62,12 @@ export function TextReveal({
       {lines.map((line, index) => (
         <span key={index} className="block overflow-hidden">
           <motion.span
-            initial={{ y: "100%", opacity: 0 }}
+            initial={{ opacity: 0, y: "30%" }}
             animate={
-              isInView ? { y: "0%", opacity: 1 } : { y: "100%", opacity: 0 }
+              isInView ? { opacity: 1, y: "0%" } : { opacity: 0, y: "30%" }
             }
             transition={{
-              duration: 0.5,
+              duration: 0.45,
               delay: delay + index * staggerDelay * 2,
               ease: [0.16, 1, 0.3, 1],
             }}

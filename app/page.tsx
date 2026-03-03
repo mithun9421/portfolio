@@ -6,7 +6,7 @@ import { TextReveal } from "@/components/animated/TextReveal";
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center px-6 md:px-12">
+    <div className="min-h-screen relative flex flex-col items-center justify-center px-6 md:px-12">
       <div className="max-w-2xl w-full">
         {/* Main Statement */}
         <motion.div
@@ -26,45 +26,37 @@ export default function Home() {
           <motion.p
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 1.8, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.4, delay: 1.2, ease: [0.16, 1, 0.3, 1] }}
             className="text-lg text-foreground-muted max-w-md"
           >
             Senior Software Engineer at PayPal. Pioneered microfrontend architecture unifying 16 applications for 300+ stakeholders.
           </motion.p>
         </motion.div>
-
-        {/* Explore Link */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 2.5 }}
-          className="mt-24"
-        >
-          <Link href="/work" className="group">
-            <motion.div
-              animate={{ y: [0, 8, 0] }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-              className="flex flex-col items-center gap-2 text-foreground-subtle group-hover:text-accent transition-colors duration-150"
-            >
-              <span className="text-xs tracking-widest uppercase">Explore Work</span>
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 16 16"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.5"
-              >
-                <path d="M8 3v10M4 9l4 4 4-4" />
-              </svg>
-            </motion.div>
-          </Link>
-        </motion.div>
       </div>
+
+      {/* Explore Link — CSS animation instead of framer-motion infinite loop */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.4, delay: 1.8 }}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2"
+      >
+        <Link href="/work" className="group">
+          <div className="flex flex-col items-center gap-2 text-foreground-subtle group-hover:text-accent transition-colors duration-150 animate-bounce-slow">
+            <span className="text-xs tracking-widest uppercase">Explore Work</span>
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+            >
+              <path d="M8 3v10M4 9l4 4 4-4" />
+            </svg>
+          </div>
+        </Link>
+      </motion.div>
     </div>
   );
 }

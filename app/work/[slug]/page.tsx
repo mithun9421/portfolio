@@ -75,21 +75,21 @@ export default async function ProjectPage({ params }: PageProps) {
           </LeadParagraph>
         </RevealOnScroll>
 
-        <BorderDraw className="my-16" delay={0.5} />
+        <BorderDraw className="my-10" delay={0.5} />
 
         {/* Context Section */}
         <RevealOnScroll delay={0.1}>
-          <section className="mb-16">
-            <SectionHeading className="mb-6">The Problem Space</SectionHeading>
+          <section className="mb-8">
+            <SectionHeading className="mb-3">The Problem Space</SectionHeading>
             <BodyText className="text-foreground-muted">{project.context}</BodyText>
           </section>
         </RevealOnScroll>
 
         {/* Constraints Section */}
         <RevealOnScroll delay={0.2}>
-          <section className="mb-16">
-            <SectionHeading className="mb-6">Working Conditions</SectionHeading>
-            <ul className="space-y-4">
+          <section className="mb-8">
+            <SectionHeading className="mb-3">Working Conditions</SectionHeading>
+            <ul className="space-y-3">
               {project.constraints.map((constraint, index) => (
                 <li
                   key={index}
@@ -104,11 +104,11 @@ export default async function ProjectPage({ params }: PageProps) {
 
         {/* Decisions Section */}
         <RevealOnScroll delay={0.3}>
-          <section className="mb-16">
-            <SectionHeading className="mb-6">
+          <section className="mb-8">
+            <SectionHeading className="mb-3">
               Architectural Choices
             </SectionHeading>
-            <div className="space-y-6">
+            <div className="space-y-4">
               {project.decisions.map((decision, index) => (
                 <BodyText key={index} className="text-foreground-muted">
                   {decision}
@@ -120,8 +120,8 @@ export default async function ProjectPage({ params }: PageProps) {
 
         {/* Outcomes Section */}
         <RevealOnScroll delay={0.4}>
-          <section className="mb-16">
-            <SectionHeading className="mb-6">Results</SectionHeading>
+          <section className="mb-8">
+            <SectionHeading className="mb-3">Results</SectionHeading>
             <div className="space-y-4">
               {project.outcomes.map((outcome, index) => (
                 <BodyText key={index} className="text-foreground-muted">
@@ -135,7 +135,7 @@ export default async function ProjectPage({ params }: PageProps) {
         {/* Quote */}
         {project.quote && (
           <>
-            <BorderDraw className="my-12" delay={0.5} />
+            <BorderDraw className="my-8" delay={0.5} />
             <RevealOnScroll delay={0.5}>
               <PullQuote>&ldquo;{project.quote}&rdquo;</PullQuote>
             </RevealOnScroll>
